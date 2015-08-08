@@ -24,6 +24,7 @@ find_library(IOKIT_LIBRARY IOKit REQUIRED)
 find_library(COREVID_LIBRARY CoreVideo REQUIRED)
 
 include_directories(
+    ../include
     /usr/local/include
     $(GLEW_INCLUDE_DIRS)
     $(glfw3_INCLUDE_DIRS)
@@ -49,6 +50,9 @@ add_definitions(
 # Executable
 add_executable(voxel_engine
 	main.cpp
+    	shader.cpp
+	SimpleFragmentShader.fragmentshader
+	SimpleVertexShader.vertexshader
 )
 target_link_libraries(voxel_engine
 	${ALL_LIBS}
