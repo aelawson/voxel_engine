@@ -40,6 +40,7 @@ set(ALL_LIBS
 )
 
 add_definitions(
+    -std=c++11
 	-DTW_STATIC
 	-DTW_NO_LIB_PRAGMA
 	-DTW_NO_DIRECT3D
@@ -50,7 +51,10 @@ add_definitions(
 # Executable
 add_executable(voxel_engine
 	main.cpp
-    	shader.cpp
+    shader.cpp
+    chunk.cpp
+    block.cpp
+    renderer.cpp
 	SimpleFragmentShader.fragmentshader
 	SimpleVertexShader.vertexshader
 )
